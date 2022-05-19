@@ -1,0 +1,60 @@
+.CoveoHelloWorld {
+  color: red;
+  height: 50px;
+  background: green;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* .CustomCSS.body {
+  color: purple;
+} */
+
+.CustomCSS.CoveoSearchInterface {
+  background-color: #fff7f7;
+}
+
+/* .CustomCSS.CoveoPreferencesPanel {
+  color: purple;
+}*/
+
+/* .CustomCSS.CoveoFacet {
+  background-color: #000000ff;
+  color: blue;
+} */
+
+.CustomCSS.coveo-tab-section {
+  background-color: #5687ac;
+  /* color:#fff7f7; */
+}
+/* a {
+  color: purple;
+} */
+/* .CustomCSS.CoveoTab {
+  background-color: #111111ff;
+  color: #ea558dff;
+} */
+
+/* .CustomCSS.coveo-search-section {
+  background-color: #111111ff;
+  color: #ea558dff;
+}*/
+/*
+.CustomCSS.CoveoSearchbox {
+  background-color: #111111ff;
+  color: #ea558dff;
+} */
+
+
+/* Auto-filled Field names */
+/* .CustomCSS.coveo-result-row {
+  color: purple;
+} */
+/* Auto-filled Field names */
+.CustomCSS.coveo-result-cell {
+  color: #4ed2b5;
+}
+/* Specific filled in field */
+/* .CustomCSS.CoveoFieldValue {
+  color: green;
+}  */

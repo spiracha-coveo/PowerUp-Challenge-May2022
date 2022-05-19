@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, height=device-height" >
+    <title>Movie List</title>
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+    <link rel="stylesheet" href="./css/CoveoFullSearch.css"/>
+    <link rel="stylesheet" href="./css/coveoextension.css"/>
+    <script src="js/CoveoJsSearch.Lazy.js"></script>
+    <script src="js/coveo.extension.js"></script>
+    <script src="js/templates/templates.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        Coveo.SearchEndpoint.configureCloudV2Endpoint(
+          "spirachacoveocomcuddlymarlinqzfwqaok",
+          "xx475c56b9-9bb3-42fb-94e2-d5e53387401f"
+        );
+        // const countryFacet = document.getElementById("country_facet");
+        // let cFI = Coveo.get(countryFacet);
+        // // console.log(cF);
+        // // console.log("hello");
+        // cFI.collapse();
+        Coveo.init(document.body);
+        const facetElement = Coveo.$$(document).find('.CoveoFacet[data-title="Countries"]');
+        console.log(facetElement);
+        const facetInstance = Coveo.get(facetElement);
+        console.log(facetInstance);
+      })
+      //cF.collapse();
+    </script>
+  </head>
+  <body id="search" class='CoveoSearchInterface CustomCSS' data-enable-history="true">
+    <div class="coveo-tab-section CustomCSS">
+      <a class="CoveoTab CustomCSS" data-id="All" data-caption="Browse Movies"></a>
+    </div>
+    <div class="CoveoAnalytics"></div>
+    <div class="coveo-search-section CustomCSS">
+      <div class='CoveoSearchbox  CustomCSS' data-placeholder='search for a movie' data-search-hub="IMDb_movies"></div>
+      <div class="CoveoFieldSuggestions" data-field="@movies_title"></div>
+    </div>
+    <div class="coveo-main-section">
+      <div class="coveo-facet-column">
+        <div class="CoveoFacet CustomCSS" data-title="Genre" data-field="@genre" data-number-of-values="4" data-is-multi-value-field="true" data-enable-toggling-operator='true'></div>
+        <div class="CoveoFacet CustomCSS" data-title="Countries" data-field="@countries" data-is-multi-value-field="true" id='country_facet'></div>
+        <div class="CoveoFacetSlider" data-title="Runtime" data-field="@duration_num" data-range-slider='true'></div>
+        <!-- class="CoveoFacetSlider" data-title="Date Released" data-field="@date" data-range-slider='true'></div> -->
+      </div>
+      <div class="coveo-results-column">
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoPreferencesPanel CustomCSS">
+          <div class="CoveoResultsPreferences"></div>
+          <div class="CoveoResultsFiltersPreferences"></div>
+        </div>
+        <div class="CoveoTriggers"></div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="CoveoDidYouMean" data-enable-auto-correction="false"></div>
+        <div class="coveo-results-header">
+          <div class="coveo-summary-section">
+            <span class="CoveoQuerySummary"><div class="coveo-show-if-no-results"></div></span>
+            <span class="CoveoQueryDuration"></span>
+          </div>
+          <div class="coveo-result-layout-section">
+            <span class="CoveoResultLayout"></span>
+          </div>
+          <div class="coveo-sort-section">
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+            <span class="CoveoSort" data-sort-criteria="@score_num descending, @score_num ascending" data-caption="Score"></span>
+            <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+          </div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoErrorReport" data-pop-up="false"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+          <script id="Default" class="result-template" type="text/html" data-layout="list">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+                <span class="CoveoFieldValue" data-field="@image" data-html-value="true" data-helper="image" data-helper-options-width="100"></span>
+              </div>
+              <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+                <div class="coveo-result-row" style="margin-top:0;">
+                  <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;" role="heading" aria-level="2">
+                    <a class="CoveoResultLink" data-field="@relatedlink"></a>
+                  </div>
+                  <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                    <div class="coveo-result-row">
+                      <span class="CoveoFieldValue" data-field="@date" data-helper="date" data-helper-options-predefined-format="yyyy"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="coveo-result-row" style="margin-top:10px;">
+                  <div class="coveo-result-cell">
+                    <span class="CoveoExcerpt"></span>
+                  </div>
+                </div>
+                <div class="coveo-result-row CustomCSS" style="margin-top:10px;">
+                  <div class="coveo-result-cell CustomCSS">
+                    <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+                    <span class="CoveoFieldValue" data-field="@duration_num" data-text-caption="Duration (in minutes)" style="margin-right:30px;"></span>
+                    <span class="CoveoFieldValue CustomCSS" data-field="@score_num" data-text-caption="Rating" style="margin-right:30px;"></span>
+                  </div>
+                </div>
+                <div class="coveo-result-row CustomCSS" style="margin-top:10px;">
+                  <div class="coveo-result-cell">
+                    <span class="CoveoFieldValue" data-field="@year" data-text-caption="Duration (minutes)" style="margin-right:30px;" data-helper="Released"></span>
+                  </div>
+                </div>
+                <div class="coveo-result-row">
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+        <div class="CoveoPager"></div>
+        <div class="CoveoLogo"></div>
+        <div class="CoveoResultsPerPage"></div>
+      </div>
+    </div>
+  </body>
+</html>
